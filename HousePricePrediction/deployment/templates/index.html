@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian House Price Prediction</title>
+    <meta
+      name="description"
+      content="Predict the estimated price of a house using Machine Learning."
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="card app-card" aria-labelledby="app-title">
+        <header class="header">
+          <div class="brand-mark" aria-hidden="true">₹</div>
+          <div>
+            <p class="eyebrow">Machine Learning</p>
+            <h1 id="app-title">Indian House Price Prediction</h1>
+          </div>
+        </header>
+
+        <p class="subtitle">
+          Predict the estimated price of a house using Machine Learning.
+        </p>
+
+        <form id="prediction-form" novalidate>
+          <div class="form-grid">
+            <div class="field-group">
+              <label for="Area">Area (sq ft)</label>
+              <input
+                id="Area"
+                name="Area"
+                type="number"
+                min="1"
+                step="any"
+                placeholder="e.g. 1500"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="BHK">BHK</label>
+              <input
+                id="BHK"
+                name="BHK"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="e.g. 3"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="Bathroom">Bathrooms</label>
+              <input
+                id="Bathroom"
+                name="Bathroom"
+                type="number"
+                min="1"
+                step="0.5"
+                placeholder="e.g. 2"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="Parking">Parking spaces</label>
+              <input
+                id="Parking"
+                name="Parking"
+                type="number"
+                min="0"
+                step="1"
+                placeholder="e.g. 1"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="Per_Sqft">Price per sq ft</label>
+              <input
+                id="Per_Sqft"
+                name="Per_Sqft"
+                type="number"
+                min="1"
+                step="any"
+                placeholder="e.g. 8500"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="Furnishing">Furnishing</label>
+              <select id="Furnishing" name="Furnishing">
+                <option value="">Select furnishing</option>
+                <option value="Semi-Furnished">Semi-Furnished</option>
+                <option value="Furnished">Furnished</option>
+                <option value="Unfurnished">Unfurnished</option>
+              </select>
+            </div>
+
+            <div class="field-group field-group-wide">
+              <label for="Locality">Locality</label>
+              <input
+                id="Locality"
+                name="Locality"
+                type="text"
+                placeholder="e.g. Dwarka"
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="Status">Status</label>
+              <select id="Status" name="Status">
+                <option value="">Select status</option>
+                <option value="Ready_to_move">Ready_to_move</option>
+                <option value="Almost_ready">Almost_ready</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="Transaction">Transaction</label>
+              <select id="Transaction" name="Transaction">
+                <option value="">Select transaction</option>
+                <option value="New_Property">New_Property</option>
+                <option value="Resale">Resale</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="Type">Type</label>
+              <select id="Type" name="Type">
+                <option value="">Select property type</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Builder_Floor">Builder_Floor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" id="predict-btn" class="primary-btn">
+              Predict House Price
+            </button>
+            <button type="button" id="reset-btn" class="secondary-btn">
+              Reset
+            </button>
+          </div>
+        </form>
+
+        <div id="message" class="message" aria-live="polite"></div>
+
+        <div id="result-card" class="result-card hidden" aria-live="polite">
+          <p class="result-label">Estimated House Price</p>
+          <div id="result-value" class="result-value">₹ 0</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

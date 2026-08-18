@@ -1,0 +1,47 @@
+============================================================
+HOUSE PRICE PREDICTION - MODEL EVALUATION REPORT
+============================================================
+
+Evaluation Date/Time: 2026-08-18 12:49:40
+
+------------------------------------------------------------
+PROJECT INFORMATION
+------------------------------------------------------------
+Project Name: House Price Prediction
+Model Name: Linear Regression
+Dataset Path: data/processed/cleaned_house_prices.csv
+
+------------------------------------------------------------
+EVALUATION DETAILS
+------------------------------------------------------------
+Target Column: Price
+Number of Test Samples: 236
+
+------------------------------------------------------------
+EVALUATION METRICS
+------------------------------------------------------------
+R² Score: 0.634008
+Mean Absolute Error (MAE): 8,879,902.11
+Mean Squared Error (MSE): 337,502,398,944,880.88
+Root Mean Squared Error (RMSE): 18,371,238.36
+
+------------------------------------------------------------
+METRIC INTERPRETATION
+------------------------------------------------------------
+R² Score (Coefficient of Determination):
+  Value: 0.634008 (range: 0 to 1)
+  Interpretation: Explains 63.40% of variance in house prices
+
+MAE (Mean Absolute Error):
+  Value: 8,879,902.11
+  Interpretation: Average prediction error (absolute)
+
+MSE (Mean Squared Error):
+  Value: 337,502,398,944,880.88
+  Interpretation: Average squared prediction error
+
+RMSE (Root Mean Squared Error):
+  Value: 18,371,238.36
+  Interpretation: Square root of MSE, same units as target
+
+============================================================
